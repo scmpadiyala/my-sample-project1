@@ -1,0 +1,18 @@
+<div>
+  Highlight color : <input type="text" (change)="handleColorChange($event)" />
+
+  <!--
+    <h1 appHighlight [highlightColor]="highlightColor">Welcome to my project</h1>
+  -->
+
+  <h1 [appHighlight]="highlightColor">Welcome to my project</h1>
+
+  <h3 [appHighlight]="highlightColor">Welcome to my sub project</h3>
+
+  <hr />
+  <h1>Structural directives</h1>
+
+  Show / Hide : <input type="text" (change)="handleShow($event)" />
+
+  <h1 *appShow="show">Diaply me / Hide me</h1>
+</div>

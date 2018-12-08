@@ -1,0 +1,22 @@
+<div>
+
+  <h3> Order Form</h3>
+
+  <form [formGroup]="orderFormGroup" (submit)="handleOrderForm(orderFormGroup.value)">
+
+    Order Name : <input type="text" name="orderName" formControlName="orderName" /> <br> <br>
+    Order No : <input type="text" name="orderNo" formControlName="orderNo" /> <br> <br>
+    Order Status : <input type="text" name="orderStatus" formControlName="orderStatus" /><br> <br>
+    <input type="submit" value="Confirm Order" />
+
+  </form>
+
+
+  <hr>
+
+
+  Current Order Status : {{orderStatus}}
+
+  <button (click)="loadOrderStatus($event)"> LoadStatus</button>
+
+</div>

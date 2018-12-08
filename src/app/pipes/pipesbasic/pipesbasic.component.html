@@ -1,0 +1,41 @@
+<div>
+
+  <app-custompipes> </app-custompipes>
+
+  <hr>
+
+  <h3><font color="blue">Normal Basic Pipes</font></h3>
+
+  <p>Date of joining without pipe : {{ dateofjoining }}</p>
+  <p>Date of joining with date pipe : {{ dateofjoining | date }}</p>
+
+  <h3><font color="blue">Pipes with parameters</font></h3>
+
+  <p>Date of joining with date pipe : {{ dateofjoining | date: "medium" }}</p>
+
+  <p>Date of joining with date pipe : {{ dateofjoining | date: "short" }}</p>
+
+  <p>Date of joining with date pipe : {{ dateofjoining | date: "mmss" }}</p>
+
+  <p>
+    Today Date of joining with date pipe : {{ today | date: "h:mm a z EEE  w" }}
+  </p>
+
+  <h4>Percentage</h4>
+
+  <p>Percentage pipe : {{ taxpercentage | percent }}</p>
+
+  Price Rate : <input type="text" [value]="itemprice | currency: 'INR'" />
+  <br />
+  Tax Percentage : <input type="text" [value]="taxpercentage | percent" />
+  <br />
+
+  <p>Title slice pipe : {{ title | slice: 3:10 }}</p>
+
+  <h3><font color="blue">Chaining the Pipes</font></h3>
+
+  <p>
+    Date of joining with date & upper case pipe :
+    {{ today | date: "medium" | uppercase }}
+  </p>
+</div>

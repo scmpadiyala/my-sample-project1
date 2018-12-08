@@ -1,0 +1,36 @@
+<form (ngSubmit)="handleFromSubmit(myFrom.value)" #myFrom="ngForm">
+  <div>
+    <label for="sname">
+      Student Name :<input
+        type="text"
+        id="sname"
+        name="s1name"
+        #sname="ngModel"
+        [(ngModel)]="stdName"
+        required
+        minlength="5"
+      />
+    </label>
+
+    <br />
+
+    Student Name : Dirty : {{ sname.dirty }} | Pristine : {{ sname.pristine }} |
+    Touched : {{ sname.touched }} | Un Touched : {{ sname.untouched }} | Valid :
+    {{ sname.valid }} | Invalid : {{ sname.invalid }}
+
+    <div [hidden]="sname.untouched || sname.valid">Validation errors</div>
+  </div>
+  <div>
+    <label for="semail">
+      Student eMail :<input
+        type="email"
+        id="semail"
+        name="semail"
+        #semail="ngModel"
+        [(ngModel)]="stdEmail"
+        required
+      />
+    </label>
+  </div>
+  <input type="submit" [disabled]="!myFrom.valid" value="Submit" />
+</form>

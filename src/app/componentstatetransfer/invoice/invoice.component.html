@@ -1,0 +1,14 @@
+<div>
+
+  <h3> Invoice : invoice no</h3>
+
+  Order Status : <input type="text" [(ngModel)]="currentOrder.orderStatus" (change)="handleStatusChange($event)" /> <br><br>
+
+  Order Name : {{currentOrder.orderName}} <br>
+  Order No : {{currentOrder.orderNo}} <br>
+
+  Current Order Status : {{currentOrder.orderStatus}}
+
+  <button (click)="loadOrderStatus($event)"> LoadStatus</button>
+
+</div>

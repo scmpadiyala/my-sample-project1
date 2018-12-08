@@ -1,0 +1,12 @@
+@import "../../../assets/test2.css";
+
+.test {
+  background-color: red;
+  font-family: "Times New Roman";
+  font-style: italic;
+}
+
+p {
+  background-color: rebeccapurple;
+  font-size: 5rem;
+}

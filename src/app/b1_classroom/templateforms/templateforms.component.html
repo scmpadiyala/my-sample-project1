@@ -1,0 +1,41 @@
+<div>
+  <h3>Wleome to Student Registration Form</h3>
+  <form #studentForm="ngForm" (submit)="handleStudentReg(studentForm.value)">
+    Student Name :
+    <input
+      name="stdName"
+      #sname="ngModel"
+      ngModel
+      type="text"
+      required
+      minlength="5"
+    />
+    <br />
+
+    <div class="mydiv" *ngIf="sname.dirty && sname.invalid">
+      <h5 *ngIf="!sname.valid.required">
+        Validation Error ! Student Name is required
+      </h5>
+
+      <h5 *ngIf="!sname.valid.minlength">
+        Validation Error ! Student Name should have min 5 char length
+      </h5>
+
+      Touched : {{ sname.touched }} || Untouched : {{ sname.untouched }} <br />
+      Changed : {{ sname.dirty }} || Non Changed : {{ sname.pristine }} <br />
+      Valid : {{ sname.valid }} || Invalid : {{ sname.invalid }} <br />
+    </div>
+
+    DOB : <input name="stdDob" #sdob="ngModel" ngModel type="text" required />
+    <br />
+
+    <div class="mydiv" *ngIf="sdob.touched && sdob.invalid">
+      <h5>Validation Error ! Student DOB is required</h5>
+    </div>
+    <input
+      type="submit"
+      value="Student Registration"
+      [disabled]="studentForm.invalid"
+    />
+  </form>
+</div>

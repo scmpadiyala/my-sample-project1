@@ -1,0 +1,29 @@
+<div>
+  <h3>Sample form for Validation</h3>
+  <form
+    [formGroup]="sampleFormGroup"
+    (ngSubmit)="handleSubmit(sampleFormGroup.value)"
+  >
+    First Name : <input class="form-control" formControlName="cname" /> <br />
+
+    Contact - Email : <input formControlName="contact" /> <br />
+
+    <div *ngIf="!sampleFormGroup.valid" class="alert alert-danger">
+      Errors {{ sampleFormGroup.valid }}
+      {{ sampleFormGroup.controls.cname.errors.required }}
+      <div *ngIf="sampleFormGroup.controls.cname.errors.required">
+        Name is required.
+      </div>
+
+      <div *ngIf="cname?.errors.minlength">
+        Name must be at least 4 characters long.
+      </div>
+    </div>
+
+    <input type="submit" value="Submit" />
+
+    <!--
+      <input type="submit" value="Submit" [disabled]="!sampleFormGroup.valid" />
+    -->
+  </form>
+</div>

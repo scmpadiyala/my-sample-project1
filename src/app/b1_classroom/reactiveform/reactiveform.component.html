@@ -1,0 +1,54 @@
+<div>
+  <h3>Order Form</h3>
+
+  <form
+    [formGroup]="orderFromGroup"
+    (ngSubmit)="handleOrderConfirmation(orderFromGroup.value)"
+  >
+    Order ID : <input type="text" formControlName="orderid" /> <br />
+
+    <div *ngIf="orderFromGroup.controls.orderid.invalid">
+      <div
+        *ngIf="orderFromGroup.controls.orderid.errors.required; else: minlength"
+      >
+        Order ID is mandatory field
+      </div>
+
+      <ng-template #minlength>
+        Order Id should be min of length
+        {{ orderFromGroup.controls.orderid.errors.minlength.requiredLength }}
+      </ng-template>
+
+      <!-- Errors : {{}} <br /> -->
+      <!-- Errors 1 {{ orderFromGroup.errors }} -->
+    </div>
+
+    Customer Name : <input type="text" formControlName="customerName" /> <br />
+
+    <div formGroupName="deliveryAddress">
+      Street : <input type="text" formControlName="street" /> <br />
+      City : <input type="text" formControlName="city" /> <br />
+    </div>
+
+    <div fromArrayName="orderItems">
+      <table>
+        <tr>
+          <button (click)="handleAddItem()">Add Item</button>
+        </tr>
+        <tr *ngFor="let orderItem of orderListItems.controls; let i = index">
+          <div [formGroup]="orderItem">
+            <button (click)="handleDeleteItem(i)">X</button>
+            <input type="text" formControlName="itemName" />
+            <input type="text" formControlName="quantity" />
+          </div>
+        </tr>
+      </table>
+    </div>
+
+    <br />
+    <input type="submit" value="Confirm Order" /> Form Status :
+    {{ orderFromGroup.valid }} : Errors : {{ orderFromGroup.errors }}
+  </form>
+</div>
+
+<!-- [disabled]="!orderFromGroup.valid" -->

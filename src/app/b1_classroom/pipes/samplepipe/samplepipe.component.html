@@ -1,0 +1,33 @@
+<div>
+  <!-- Pipe - Pipe with single paramer / multiple parameters / pipe chaining -->
+  Total Amount : {{ totalAmount | currency: "INR" }}
+
+  : <input type="text" [value]="totalAmount | currency: 'INR'" />
+
+  <br />
+  Current Date : {{ currentDate | date: "medium" | uppercase }}
+
+  <hr />
+
+  <h3>Custom Pipes</h3>
+
+  Name : {{ name }}
+
+  Piped Name : {{ name | gender }} <br />
+
+  Piped Name : {{ name | gender: "male" }} <br />
+
+  Piped Name : {{ name | gender: "female":"married" | uppercase }} <br />
+
+  Piped Name : {{ name | gender: "female" }} <br />
+
+  Piped Name : {{ name | gender: "male3" }} <br /><br />
+  Change Name : <input type="text" (change)="handleChangeName($event)" />
+
+  <hr />
+  <!-- Custom Pipes Pure Pipes -->
+
+  Student IDs : {{ stdids }} <br />
+  Reverse Student IDS {{ stdids | reverse }} <br /><br />
+  Add Student ID : <input type="text" (change)="handleAddStudentId($event)" />
+</div>

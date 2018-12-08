@@ -1,0 +1,20 @@
+<div>
+  <h5> Database Access Test</h5>
+
+  <ol *ngFor="let customer of customers ">
+    <li> {{customer.key}}</li>
+    <li> {{customer.firstName}}</li>
+  </ol>
+
+  <h5> New Customer</h5>
+
+  <ol *ngFor="let customer of newCustomer ">
+    <li> {{customer.key}}</li>
+    <li> {{customer.firstName}}</li>
+    <li *ngFor="let subComp of customer.subComp">
+      {{subComp}}
+    </li>
+  </ol>
+
+
+</div>

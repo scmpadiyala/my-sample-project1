@@ -1,0 +1,24 @@
+<div>
+  <form
+    [formGroup]="accountFormGroup"
+    (ngSubmit)="handleAccountReg(accountFormGroup.value)"
+  >
+    Name : <input type="text" formControlName="name" /> <br />
+    Age : <input type="text" formControlName="age" /> <br />
+    <div formGroupName="address">
+      <h4>Address</h4>
+      Street : <input type="text" name="street" formControlName="street" />
+      <br />
+      Country : <input type="text" formControlName="country" /> <br />
+      <!--
+        <select formControlName="country">
+          <option value="IN"> India</option>
+          <option value="USA"> USA</option>
+          <option value="UK"> UK</option>
+        </select>
+      -->
+      <br />
+    </div>
+    <input type="submit" value="Register Account" />
+  </form>
+</div>
