@@ -1,0 +1,16 @@
+<div>
+  <h1>Parent Data</h1>
+
+  1. Totalt Amount : {{ totalAmount }} :
+  <input type="text" [(ngModel)]="totalAmount" /> <br />
+  2. Student IDs : {{ stdids }} :
+  <input type="text" (change)="handleAddId($event)" /> <br />
+  3. Student details : {{ student.id }} : {{ student.name }} :
+  <input type="text" [(ngModel)]="student.name" />
+
+  <app-cdchild1
+    [totalAmount]="totalAmount"
+    [stdids]="stdids"
+    [student]="student"
+  ></app-cdchild1>
+</div>

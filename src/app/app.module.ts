@@ -67,6 +67,11 @@ import { SecuritysampleComponent } from './security/securitysample/securitysampl
 import { StrustresourceurlComponent } from './security/strustresourceurl/strustresourceurl.component';
 import { StrustscriptComponent } from './security/strustscript/strustscript.component';
 import { StruststyleComponent } from './security/struststyle/struststyle.component';
+import { CdparentComponent } from './changedetection/cdparent/cdparent.component';
+import { Cdchild1Component } from './changedetection/cdchild1/cdchild1.component';
+import { Cdchild2Component } from './changedetection/cdchild2/cdchild2.component';
+import { ZonetestComponent } from './zonejs/zonetest/zonetest.component';
+import { ZonesampleComponent } from './zonejs/zonesample/zonesample.component';
 
 @NgModule({
   declarations: [
@@ -120,7 +125,12 @@ import { StruststyleComponent } from './security/struststyle/struststyle.compone
     SecuritysampleComponent,
     StrustresourceurlComponent,
     StrustscriptComponent,
-    StruststyleComponent
+    StruststyleComponent,
+    CdparentComponent,
+    Cdchild1Component,
+    Cdchild2Component,
+    ZonetestComponent,
+    ZonesampleComponent
   ],
 
   imports: [

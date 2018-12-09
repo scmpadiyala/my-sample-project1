@@ -1,0 +1,17 @@
+<div>
+  <br /><br />
+  <h2>Child Component Data from Parent</h2>
+  1. Totalt Amount : {{ totalAmount }} <br />
+
+  2. Student IDs : {{ stdids }} <br />
+
+  2.1
+  <ol>
+    <li *ngFor="let id of stdids">{{ id }}</li>
+  </ol>
+
+  <br />
+  3. Student details : {{ student.id }} : {{ student.name }} <br />
+
+  <app-cdchild2></app-cdchild2>
+</div>
