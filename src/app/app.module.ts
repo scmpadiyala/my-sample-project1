@@ -72,6 +72,7 @@ import { Cdchild1Component } from './changedetection/cdchild1/cdchild1.component
 import { Cdchild2Component } from './changedetection/cdchild2/cdchild2.component';
 import { ZonetestComponent } from './zonejs/zonetest/zonetest.component';
 import { ZonesampleComponent } from './zonejs/zonesample/zonesample.component';
+import { AsynsampleComponent } from './aync/asynsample/asynsample.component';
 
 @NgModule({
   declarations: [
@@ -130,7 +131,8 @@ import { ZonesampleComponent } from './zonejs/zonesample/zonesample.component';
     Cdchild1Component,
     Cdchild2Component,
     ZonetestComponent,
-    ZonesampleComponent
+    ZonesampleComponent,
+    AsynsampleComponent
   ],
 
   imports: [

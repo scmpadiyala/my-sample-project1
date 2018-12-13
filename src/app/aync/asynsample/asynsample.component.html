@@ -1,0 +1,9 @@
+<div>
+  asynsample works! {{ userSubscription | async | json }}
+
+  User List <br /><br />
+
+  <ol>
+    <li *ngFor="let user of (userSubscription | async)">{{ user.name }}</li>
+  </ol>
+</div>
